@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">GymmateApplication</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="reps">Reps</string>
+    <string name="sets">Sets</string>
+    <string name="edit_amp_track_workouts"><![CDATA[Edit & Track Workouts]]></string>
+    <string name="workout_history">Workout History</string>
+    <string name="today_s_workout">Today\'s Workout</string>
+    <string name="weekly_progress">Weekly Progress</string>
+    <string name="edit_workouts">Edit Workouts</string>
+    <string name="start_workout">Start Workout</string>
+    <string name="gymmate_dashboard">GymMate Dashboard</string>
+    <string name="stay_consistent_stay_strong">Stay consistent. Stay strong!</string>
+    <string name="_70_complete">70% Complete</string>
+    <string name="welcome_back_athlete">Welcome back, Athlete!</string>
+    <string name="chest_amp_triceps"><![CDATA[Chest & Triceps]]></string>
+    <string name="todo">TODO</string>
+    <string name="registration">Registration</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="gymmate">Gymmate</string>
+    <string-array name="sample_workouts">
+        <item>Chest &amp; Triceps</item>
+        <item>Back &amp; Biceps</item>
+        <item>Legs &amp; Shoulders</item>
+        <item>Cardio</item>
+        <item>Abs</item>
+    </string-array>
+
+</resources>
