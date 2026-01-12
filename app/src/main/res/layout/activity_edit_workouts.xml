@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-    <!-- Main scrollable content -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvEditWorkoutTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_amp_track_workouts"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+    <!-- Spinner for selecting workout -->
+    <Spinner
+        android:id="@+id/spinnerWorkoutSelect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:entries="@array/sample_workouts"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEditWorkoutTitle" />
 
-            <!-- Title -->
-            <TextView
-                android:id="@+id/tvEditWorkoutTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/edit_amp_track_workouts"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="#111111"
-                android:layout_marginTop="16dp"/>
+    <!-- Reps input -->
+    <EditText
+        android:id="@+id/etReps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:autofillHints=""
+        android:hint="@string/reps"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerWorkoutSelect"
+        tools:ignore="VisualLintTextFieldSize" />
 
-            <!-- Workout name input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilWorkoutName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/select_or_type_workout"
-                android:layout_marginTop="24dp">
+    <!-- Sets input -->
+    <EditText
+        android:id="@+id/etSets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/sets"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etReps"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
 
-                <AutoCompleteTextView
-                    android:id="@+id/actWorkoutName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:completionThreshold="1"
-                    android:textSize="20sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+    <!-- Save button -->
+    <Button
+        android:id="@+id/btnSaveWorkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/save_changes"
+        android:textColor="#263238"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSets"
+        tools:ignore="VisualLintButtonSize" />
 
-            <!-- Reps input -->
-            <EditText
-                android:textColor="#000000"
-                android:id="@+id/etReps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="@string/reps"
-                android:inputType="number"
-                android:minHeight="48dp"/>
+    <!-- Workout History label -->
+    <TextView
+        android:id="@+id/tvHistoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/workout_history"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#222222"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveWorkout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
 
-            <!-- Sets input -->
-            <EditText
-                android:textColor="#000000"
-                android:id="@+id/etSets"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="@string/sets"
-                android:inputType="number"
-                android:minHeight="48dp"/>
+    <!-- RecyclerView for workout history -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerWorkoutHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp" />
 
-            <!-- Save button -->
-            <Button
-                android:id="@+id/btnSaveWorkout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#4CAF50"
-                android:text="@string/save_changes"
-                android:textColor="#FFFFFF"/>
-
-            <!-- Workout History label -->
-            <TextView
-                android:id="@+id/tvHistoryLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/workout_history"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#222222"
-                android:layout_marginTop="24dp"/>
-
-            <!-- RecyclerView for workout history -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerWorkoutHistory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingTop="8dp"
-                android:paddingBottom="16dp"
-                android:nestedScrollingEnabled="false"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
