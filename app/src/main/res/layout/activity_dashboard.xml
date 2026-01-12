@@ -9,17 +9,20 @@
     android:background="#F9F9F9">
 
     <!-- LOGO -->
+
+    <!-- Header -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/gym_logo"
+        android:layout_marginTop="112dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/gym_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Header -->
     <TextView
         android:id="@+id/tvDashboardTitle"
         android:layout_width="0dp"

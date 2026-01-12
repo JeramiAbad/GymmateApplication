@@ -7,19 +7,23 @@
     android:padding="16dp">
 
     <!-- Workout Name -->
+
+    <!-- Timer -->
+
     <TextView
         android:id="@+id/tvWorkoutName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
         android:text="Workout Name"
+        android:textColor="#111111"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#111111"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Timer -->
     <TextView
         android:id="@+id/tvTimer"
         android:layout_width="wrap_content"

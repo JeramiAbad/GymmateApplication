@@ -35,7 +35,7 @@ public class EditWorkoutsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_workouts);
 
         // Initialize views
-        actvWorkoutName = findViewById(R.id.actvWorkoutName);
+        actvWorkoutName = findViewById(R.id.actWorkoutName);
         etReps = findViewById(R.id.etReps);
         etSets = findViewById(R.id.etSets);
         btnSaveWorkout = findViewById(R.id.btnSaveWorkout);

@@ -16,6 +16,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_MEMBER_NAME = "name";
     public static final String COLUMN_MEMBER_EMAIL = "email";
     public static final String COLUMN_MEMBER_PASSWORD = "password";
+    public static final String TABLE_WORKOUTS = "workouts";
+    public static final String COL_ID = "id";
+    public static final String COL_NAME = "name";
+    public static final String COL_REPS = "reps";
+    public static final String COL_SETS = "sets";
 
     // Constructor
     public DBHelper(Context context) {
@@ -32,6 +37,15 @@ public class DBHelper extends SQLiteOpenHelper {
                 COLUMN_MEMBER_PASSWORD + " TEXT" +
                 ")";
         db.execSQL(createMembersTable);
+        String CREATE_WORKOUTS_TABLE =
+                "CREATE TABLE " + TABLE_WORKOUTS + " (" +
+                        COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COL_NAME + " TEXT NOT NULL, " +
+                        COL_REPS + " INTEGER NOT NULL, " +
+                        COL_SETS + " INTEGER NOT NULL" +
+                        ");";
+
+        db.execSQL(CREATE_WORKOUTS_TABLE);
     }
 
     // Upgrade DB
