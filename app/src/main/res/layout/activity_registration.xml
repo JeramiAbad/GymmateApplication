@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@android:color/white"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:id="@+id/main">
 
     <ImageView
         android:layout_width="100dp"
@@ -28,6 +29,7 @@
         android:gravity="center" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/etFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,6 +41,7 @@
         tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +55,7 @@
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

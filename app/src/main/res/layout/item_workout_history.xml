@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="#F5F5F5"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvWorkoutName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Name"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#111111"/>
+
+    <TextView
+        android:id="@+id/tvReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reps: 10"
+        android:textColor="#555555"/>
+
+    <TextView
+        android:id="@+id/tvSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sets: 3"
+        android:textColor="#555555"/>
+</LinearLayout>
