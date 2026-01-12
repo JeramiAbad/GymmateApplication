@@ -28,12 +28,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:hint="@string/select_or_type_workout"
         android:inputType="textPersonName"
         android:minHeight="56dp"
         app:layout_constraintTop_toBottomOf="@id/tvEditWorkoutTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <!-- Reps -->
     <EditText
@@ -41,11 +43,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:hint="@string/reps"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/actWorkoutName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/actWorkoutName"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <!-- Sets -->
     <EditText
@@ -53,11 +58,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:hint="@string/sets"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/etReps"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/etReps"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <!-- Save Button -->
     <Button
@@ -68,7 +76,8 @@
         android:text="@string/save_changes"
         app:layout_constraintTop_toBottomOf="@id/etSets"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- History Label -->
     <TextView
@@ -92,6 +101,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHistoryLabel"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
