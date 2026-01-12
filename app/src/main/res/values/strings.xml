@@ -1,4 +1,5 @@
 <resources>
+    <string name="select_or_type_workout">Select or type workout</string>
     <string name="app_name">GymmateApplication</string>
     <string name="save_changes">Save Changes</string>
     <string name="reps">Reps</string>
@@ -30,5 +31,7 @@
         <item>Cardio</item>
         <item>Abs</item>
     </string-array>
+
+        <string name="tools_and_resources">Tools &amp; Resources</string>
 
 </resources>

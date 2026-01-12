@@ -1,0 +1,44 @@
+package com.example.gymmateapplication;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    // Database
+    private static final String DATABASE_NAME = "GymMateDB";
+    private static final int DATABASE_VERSION = 1;
+
+    // Members table
+    public static final String TABLE_MEMBERS = "members";
+    public static final String COLUMN_MEMBER_ID = "id";
+    public static final String COLUMN_MEMBER_NAME = "name";
+    public static final String COLUMN_MEMBER_EMAIL = "email";
+    public static final String COLUMN_MEMBER_PASSWORD = "password";
+
+    // Constructor
+    public DBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    // Create tables
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String createMembersTable = "CREATE TABLE IF NOT EXISTS " + TABLE_MEMBERS + " (" +
+                COLUMN_MEMBER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_MEMBER_NAME + " TEXT, " +
+                COLUMN_MEMBER_EMAIL + " TEXT UNIQUE, " +   // email must be unique
+                COLUMN_MEMBER_PASSWORD + " TEXT" +
+                ")";
+        db.execSQL(createMembersTable);
+    }
+
+    // Upgrade DB
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Drop and recreate table if version changes
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MEMBERS);
+        onCreate(db);
+    }
+}
