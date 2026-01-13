@@ -41,5 +41,10 @@
     </string-array>
 
         <string name="tools_and_resources">Tools &amp; Resources</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="age">Age</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="result_will_appear_here">Result will appear here</string>
 
 </resources>

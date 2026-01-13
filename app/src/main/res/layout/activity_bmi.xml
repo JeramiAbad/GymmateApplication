@@ -1,44 +1,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:autofillHints=""
     android:orientation="vertical"
-    android:padding="24dp">
+    android:paddingRight="24dp"
+    android:paddingTop="150dp"
+    android:paddingLeft="24dp">
+
 
     <EditText
         android:id="@+id/etHeight"
-        android:hint="Height (cm)"
-        android:inputType="numberDecimal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="@string/height_cm"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/etWeight"
-        android:hint="Weight (kg)"
-        android:inputType="numberDecimal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/weight_kg"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/etAge"
-        android:hint="Age"
-        android:inputType="number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="@string/age"
+        android:inputType="number"
+        android:minHeight="48dp" />
 
     <Spinner
         android:id="@+id/spGender"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnCalculate"
-        android:text="Calculate BMI"
+        android:text="@string/calculate_bmi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tvResult"
-        android:text="Result will appear here"
+        android:text="@string/result_will_appear_here"
         android:textSize="18sp"
         android:paddingTop="20dp"
         android:layout_width="match_parent"
