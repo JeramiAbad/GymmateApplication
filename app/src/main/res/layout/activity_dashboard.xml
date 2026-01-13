@@ -11,11 +11,12 @@
     <!-- LOGO -->
 
     <!-- Header -->
+
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="56dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/gym_logo"
         app:layout_constraintEnd_toEndOf="parent"
