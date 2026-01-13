@@ -24,6 +24,14 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="gymmate">Gymmate</string>
+        <string name="welcome_back">Welcome back!</string>
+        <string name="no_workout_saved">No workout saved</string>
+        <string name="duration_mins">Duration: %1$d mins</string>
+        <string name="progress_complete">%1$d%% Complete</string>
+        <string name="last_bmi">Last BMI: %1$.2f | BMR: %2$.2f</string>
+        <string name="last_bmi_placeholder">Last BMI: —</string>
+
+
     <string-array name="sample_workouts">
         <item>Chest &amp; Triceps</item>
         <item>Back &amp; Biceps</item>
