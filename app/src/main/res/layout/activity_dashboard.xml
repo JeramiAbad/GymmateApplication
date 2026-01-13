@@ -206,7 +206,9 @@
                 android:text="Edit Workouts"
                 android:textColor="#424242"
                 tools:ignore="HardcodedText,VisualLintButtonSize" />
-
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"/>
             <Button
                 android:id="@+id/btnBmi"
                 android:layout_width="0dp"
