@@ -17,4 +17,5 @@ public class Workout {
     public String getName() { return name; }
     public int getReps() { return reps; }
     public int getSets() { return sets; }
+
 }

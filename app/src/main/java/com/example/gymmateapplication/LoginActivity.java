@@ -1,6 +1,7 @@
 package com.example.gymmateapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,6 +20,20 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // ✅ Check if user is already logged in
+        SharedPreferences prefs = getSharedPreferences("GymmatePrefs", MODE_PRIVATE);
+        boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
+        String savedEmail = prefs.getString("memberEmail", "");
+
+        if (isLoggedIn) {
+            // User already logged in → go directly to Dashboard
+            Intent intent = new Intent(this, DashboardActivity.class);
+            startActivity(intent);
+            finish();
+            return; // exit onCreate to avoid setting layout again
+        }
+
         setContentView(R.layout.activity_login);
 
         dbHelper = new DBHelper(this);
@@ -27,6 +42,11 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
+
+        // ✅ Prefill email if saved
+        if (!savedEmail.isEmpty()) {
+            etEmail.setText(savedEmail);
+        }
 
         // Login button click
         btnLogin.setOnClickListener(v -> loginUser());
@@ -57,13 +77,17 @@ public class LoginActivity extends AppCompatActivity {
 
         if (cursor != null && cursor.moveToFirst()) {
             int nameIndex = cursor.getColumnIndex(DBHelper.COLUMN_MEMBER_NAME);
+            String name = (nameIndex >= 0) ? cursor.getString(nameIndex) : "";
 
-            if (nameIndex >= 0) { // check to avoid -1
-                String name = cursor.getString(nameIndex);
-                Toast.makeText(this, "Welcome back, " + name + "!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(this, "Welcome back, " + name + "!", Toast.LENGTH_SHORT).show();
+
+            // ✅ Save login status and email
+            SharedPreferences prefs = getSharedPreferences("GymmatePrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("isLoggedIn", true);
+            editor.putString("memberName", name);
+            editor.putString("memberEmail", email);
+            editor.apply();
 
             Intent intent = new Intent(this, DashboardActivity.class);
             startActivity(intent);
@@ -72,9 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
         }
 
-// Close resources
         if (cursor != null) cursor.close();
         db.close();
-
     }
 }
